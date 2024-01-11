@@ -12,6 +12,7 @@ class DessertDetailViewModel: ObservableObject {
     @Published private var dessert: Dessert
     @Published var isShowingIngredients = true
     let ingredientsLabel = "Ingredients"
+    private let defaultImageName = "photo"
     
     init(dessert: Dessert) {
         self.dessert = dessert
@@ -21,7 +22,7 @@ class DessertDetailViewModel: ObservableObject {
         if let imageURL = URL(string: dessert.imageURLString), let image = ImageCache.cache[imageURL] {
             return image
         } else {
-            return Image(systemName: "photo")
+            return Image(systemName: defaultImageName)
         }
     }
     
@@ -30,11 +31,15 @@ class DessertDetailViewModel: ObservableObject {
     }
     
     var origin: String {
-        dessert.origin ?? ""
+        dessert.origin
+    }
+    
+    var showOrigin: Bool {
+        return !dessert.origin.isEmpty
     }
     
     var instructions: String {
-        dessert.instructions ?? ""
+        dessert.instructions
     }
     
     var ingredients: [DessertIngredient] {

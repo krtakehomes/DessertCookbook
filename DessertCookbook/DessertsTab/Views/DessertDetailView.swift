@@ -26,8 +26,10 @@ struct DessertDetailView: View {
                             .font(.title.bold())
                             .multilineTextAlignment(.center)
                         
-                        Text(viewModel.origin)
-                            .font(.caption)
+                        if viewModel.showOrigin {
+                            Text(viewModel.origin)
+                                .font(.caption)
+                        }
                     }
                         
                     ExpandableCardView(isExpanded: $viewModel.isShowingIngredients) {

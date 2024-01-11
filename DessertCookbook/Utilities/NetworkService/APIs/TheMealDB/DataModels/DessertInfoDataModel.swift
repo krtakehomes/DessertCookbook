@@ -7,9 +7,10 @@
 
 /// The data model representing the _detailed_ information pertaining to a dessert
 struct DessertInfoDataModel: Decodable {
-    let instructions: String
-    private(set) var ingredients: [DessertIngredient] = []
     let origin: String
+    let instructions: String
+    private(set) var ingredientNames: [String] = []
+    private(set) var ingredientMeasurements: [String] = []
     
     private enum CodingKeys: String, CodingKey {
         case instructions = "strInstructions"
@@ -19,24 +20,27 @@ struct DessertInfoDataModel: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        instructions = try container.decodeIfPresent(String.self, forKey: CodingKeys.instructions) ?? ""
         origin = try container.decodeIfPresent(String.self, forKey: CodingKeys.origin) ?? ""
-        ingredients = try decodeIngredientKeys(from: decoder)
+        instructions = try container.decodeIfPresent(String.self, forKey: CodingKeys.instructions) ?? ""
+        
+        let ingredients: (names: [String], measurements: [String]) = try decodeIngredientKeys(from: decoder)
+        ingredientNames = ingredients.names
+        ingredientMeasurements = ingredients.measurements
     }
     
     /// Decodes the ingredient keys from the provided decoder
     ///
-    /// - Returns: An array of dessert ingredients created from the decoded keys
-    private func decodeIngredientKeys(from decoder: Decoder) throws -> [DessertIngredient] {
+    /// - Returns: A tuple containing arrays for the dessert's ingredient names and measurements
+    private func decodeIngredientKeys(from decoder: Decoder) throws -> (names: [String], measurements: [String]) {
         let container = try decoder.container(keyedBy: CustomCodingKeys.self)
         
-        var ingredientKeyStrings: [String] = []
+        var ingredientNameKeyStrings: [String] = []
         var measurementKeyStrings: [String] = []
         
         // Find all keys that begin with the known ingredient and measure prefixes
         for key in container.allKeys {
             if key.stringValue.hasPrefix(ingredientKeyPrefix) {
-                ingredientKeyStrings.append(key.stringValue)
+                ingredientNameKeyStrings.append(key.stringValue)
             }
 
             if key.stringValue.hasPrefix(measurementKeyPrefix) {
@@ -44,21 +48,27 @@ struct DessertInfoDataModel: Decodable {
             }
         }
         
-        // Sort the key strings in place by ascending order
-        ingredientKeyStrings.sort { $0 < $1 }
-        measurementKeyStrings.sort { $0 < $1 }
+        // Sort the key strings in place by ascending order so that strings at the same index in each array are associated
+        ingredientNameKeyStrings.sort()
+        measurementKeyStrings.sort()
         
-        return try zip(ingredientKeyStrings, measurementKeyStrings).compactMap { (ingredientKeyString, measurementKeyString) in
-            guard let ingredientKey = CustomCodingKeys(stringValue: ingredientKeyString),
-                  let measurementKey = CustomCodingKeys(stringValue: measurementKeyString) else {
+        let ingredientNames: [String] = try ingredientNameKeyStrings.compactMap {
+            guard let ingredientNameKey = CustomCodingKeys(stringValue: $0) else {
                 return nil
             }
             
-            let ingredientName: String = try container.decodeIfPresent(String.self, forKey: ingredientKey) ?? ""
-            let ingredientMeasurement: String = try container.decodeIfPresent(String.self, forKey: measurementKey) ?? ""
-            
-            return DessertIngredient(name: ingredientName, measurement: ingredientMeasurement)
+            return try container.decodeIfPresent(String.self, forKey: ingredientNameKey) ?? ""
         }
+        
+        let measurementNames: [String] = try measurementKeyStrings.compactMap {
+            guard let measurementKey = CustomCodingKeys(stringValue: $0) else {
+                return nil
+            }
+            
+            return try container.decodeIfPresent(String.self, forKey: measurementKey) ?? ""
+        }
+        
+        return (ingredientNames, measurementNames)
     }
 }
 

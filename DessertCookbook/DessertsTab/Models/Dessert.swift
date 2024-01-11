@@ -19,8 +19,8 @@ import Foundation
 struct Dessert: Identifiable, Hashable {
     let id: String
     let name: String
-    var origin: String? = nil
-    var instructions: String? = nil
+    var origin: String = ""
+    var instructions: String = ""
     var ingredients: [DessertIngredient] = []
     let imageURLString: String
 }

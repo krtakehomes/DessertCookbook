@@ -58,23 +58,39 @@ class DessertTabViewModel: ObservableObject {
                 
                 // Ensure that the response contains the dessert information
                 guard let dessertInfoDataModel = containerDataModel.dataModels.first else {
+                    isShowingBadRecipeErrorAlert = true
                     return
                 }
                 
-                // Do not set the selected dessert if its instructions or ingredients are missing
-                if dessertInfoDataModel.instructions.isEmpty || dessertInfoDataModel.ingredients.isEmpty {
+                let ingredientNames: [String] = dessertInfoDataModel.ingredientNames
+                let ingredientMeasurements: [String] = dessertInfoDataModel.ingredientMeasurements
+                
+                // Ensure that there are an equal number of ingredient names and measurements
+                if ingredientNames.count != ingredientMeasurements.count {
+                    isShowingBadRecipeErrorAlert = true
+                    return
+                }
+                
+                let ingredients: [DessertIngredient] = zip(ingredientNames, ingredientMeasurements).compactMap {
+                    // Do not build the DessertIngredient model if its name or measurement are missing
+                    if $0.isEmpty || $1.isEmpty {
+                        return nil
+                    } else {
+                        return DessertIngredient(name: $0, measurement: $1)
+                    }
+                }
+                
+                // After building the DessertIngredient models, ensure that there are in fact ingredients
+                if ingredients.isEmpty {
                     isShowingBadRecipeErrorAlert = true
                     return
                 }
                 
                 var selectedDessert: Dessert = dessert
-                selectedDessert.instructions = dessertInfoDataModel.instructions
                 selectedDessert.origin = dessertInfoDataModel.origin
-                selectedDessert.ingredients = dessertInfoDataModel.ingredients
-                    .filter { ingredient in
-                        // Do not store the ingredient if its name and measurement are missing
-                        !ingredient.name.isEmpty && !ingredient.measurement.isEmpty
-                    }
+                selectedDessert.instructions = dessertInfoDataModel.instructions
+                selectedDessert.ingredients = ingredients
+                
                 self.selectedDessert = selectedDessert
             case .failure(let failure):
                 // Show an error alert because a network error occurred while fetching the dessert information
