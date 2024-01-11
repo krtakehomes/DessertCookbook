@@ -8,11 +8,11 @@
 
 **Steps:**
 1. Clone this repository or download it as a `.zip` file.
-2. Navigate into the `DessertCookbook` folder.
-3. Open the `DessertCookbook.xcodeproj` file in Xcode.
-4. Once Xcode finishes indexing the project files, click the Run button or press `⌘ + b`.
+2. Navigate into the top-level folder.
+3. Open the `DessertCookbook.xcodeproj` file in Xcode. You may need to trust this file within Xcode.
+4. Once Xcode finishes indexing the project files, click the Run button or press `⌘ + b`. The app install and first launch may take a moment.
 
-The application will appear in your simulator under the name _Desserts_.
+The app will appear in your simulator under the name _Desserts_.
 
 ## Design Approach
 
