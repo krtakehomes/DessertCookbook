@@ -20,7 +20,7 @@ struct CardView<Content: View>: View {
     private let cornerRadius: CGFloat
     private let hasShadow: Bool
     
-    init(backgroundColor: Color = .white, cornerRadius: CGFloat = 8, hasShadow: Bool = true, content: @escaping () -> Content) {
+    init(backgroundColor: Color = .white, cornerRadius: CGFloat = 8, hasShadow: Bool = true, content: () -> Content) {
         self.backgroundColor = backgroundColor
         self.cornerRadius = cornerRadius
         self.hasShadow = hasShadow

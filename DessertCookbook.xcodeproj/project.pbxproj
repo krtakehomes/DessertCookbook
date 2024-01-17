@@ -22,16 +22,18 @@
 		C019566F2B4F81AC00AD9D62 /* DessertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956662B4F81AC00AD9D62 /* DessertDetailView.swift */; };
 		C01956702B4F81AC00AD9D62 /* DessertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956682B4F81AC00AD9D62 /* DessertCardView.swift */; };
 		C01956712B4F81AC00AD9D62 /* DessertTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956692B4F81AC00AD9D62 /* DessertTabView.swift */; };
-		C01956762B4F81B600AD9D62 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956732B4F81B600AD9D62 /* CachedAsyncImage.swift */; };
 		C01956772B4F81B600AD9D62 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956742B4F81B600AD9D62 /* CardView.swift */; };
 		C01956782B4F81B600AD9D62 /* ExpandableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956752B4F81B600AD9D62 /* ExpandableCardView.swift */; };
-		C01956852B4F81D200AD9D62 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019567A2B4F81D200AD9D62 /* ImageCache.swift */; };
 		C01956862B4F81D200AD9D62 /* NetworkService+TheMealDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C019567E2B4F81D200AD9D62 /* NetworkService+TheMealDB.swift */; };
 		C01956872B4F81D200AD9D62 /* DessertInfoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956802B4F81D200AD9D62 /* DessertInfoDataModel.swift */; };
 		C01956882B4F81D200AD9D62 /* DessertDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956812B4F81D200AD9D62 /* DessertDataModel.swift */; };
 		C01956892B4F81D200AD9D62 /* MealsContainerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956822B4F81D200AD9D62 /* MealsContainerDataModel.swift */; };
 		C019568A2B4F81D200AD9D62 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956832B4F81D200AD9D62 /* NetworkService.swift */; };
 		C019568B2B4F81D200AD9D62 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01956842B4F81D200AD9D62 /* Endpoint.swift */; };
+		C047B44F2B57772200922002 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B44E2B57772200922002 /* CachedAsyncImage.swift */; };
+		C047B4532B57773200922002 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B4512B57773200922002 /* ImageCache.swift */; };
+		C047B4542B57773200922002 /* CacheableImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B4522B57773200922002 /* CacheableImageModel.swift */; };
+		C047B4562B57779F00922002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B4552B57779F00922002 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,16 +72,18 @@
 		C01956662B4F81AC00AD9D62 /* DessertDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DessertDetailView.swift; sourceTree = "<group>"; };
 		C01956682B4F81AC00AD9D62 /* DessertCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DessertCardView.swift; sourceTree = "<group>"; };
 		C01956692B4F81AC00AD9D62 /* DessertTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DessertTabView.swift; sourceTree = "<group>"; };
-		C01956732B4F81B600AD9D62 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		C01956742B4F81B600AD9D62 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C01956752B4F81B600AD9D62 /* ExpandableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableCardView.swift; sourceTree = "<group>"; };
-		C019567A2B4F81D200AD9D62 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		C019567E2B4F81D200AD9D62 /* NetworkService+TheMealDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkService+TheMealDB.swift"; sourceTree = "<group>"; };
 		C01956802B4F81D200AD9D62 /* DessertInfoDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DessertInfoDataModel.swift; sourceTree = "<group>"; };
 		C01956812B4F81D200AD9D62 /* DessertDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DessertDataModel.swift; sourceTree = "<group>"; };
 		C01956822B4F81D200AD9D62 /* MealsContainerDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsContainerDataModel.swift; sourceTree = "<group>"; };
 		C01956832B4F81D200AD9D62 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C01956842B4F81D200AD9D62 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		C047B44E2B57772200922002 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		C047B4512B57773200922002 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		C047B4522B57773200922002 /* CacheableImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheableImageModel.swift; sourceTree = "<group>"; };
+		C047B4552B57779F00922002 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +134,10 @@
 		C01956302B4F80FF00AD9D62 /* DessertCookbook */ = {
 			isa = PBXGroup;
 			children = (
-				C01956352B4F810000AD9D62 /* Assets.xcassets */,
+				C047B4552B57779F00922002 /* AppDelegate.swift */,
 				C019565B2B4F818300AD9D62 /* ContentView.swift */,
 				C01956312B4F80FF00AD9D62 /* DessertCookbookApp.swift */,
+				C01956352B4F810000AD9D62 /* Assets.xcassets */,
 				C019565D2B4F81AC00AD9D62 /* DessertsTab */,
 				C01956372B4F810000AD9D62 /* Preview Content */,
 				C01956722B4F81B600AD9D62 /* SharedComponents */,
@@ -216,7 +221,7 @@
 		C01956722B4F81B600AD9D62 /* SharedComponents */ = {
 			isa = PBXGroup;
 			children = (
-				C01956732B4F81B600AD9D62 /* CachedAsyncImage.swift */,
+				C047B44E2B57772200922002 /* CachedAsyncImage.swift */,
 				C01956742B4F81B600AD9D62 /* CardView.swift */,
 				C01956752B4F81B600AD9D62 /* ExpandableCardView.swift */,
 			);
@@ -226,7 +231,7 @@
 		C01956792B4F81D200AD9D62 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				C019567A2B4F81D200AD9D62 /* ImageCache.swift */,
+				C047B4502B57773200922002 /* ImageCache */,
 				C019567B2B4F81D200AD9D62 /* NetworkService */,
 			);
 			path = Utilities;
@@ -267,6 +272,15 @@
 				C01956822B4F81D200AD9D62 /* MealsContainerDataModel.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		C047B4502B57773200922002 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				C047B4512B57773200922002 /* ImageCache.swift */,
+				C047B4522B57773200922002 /* CacheableImageModel.swift */,
+			);
+			path = ImageCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,16 +413,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C047B4562B57779F00922002 /* AppDelegate.swift in Sources */,
 				C019566E2B4F81AC00AD9D62 /* AlertInfo.swift in Sources */,
+				C047B4542B57773200922002 /* CacheableImageModel.swift in Sources */,
 				C019566B2B4F81AC00AD9D62 /* DessertDetailViewModel.swift in Sources */,
 				C019566F2B4F81AC00AD9D62 /* DessertDetailView.swift in Sources */,
 				C019566C2B4F81AC00AD9D62 /* DessertIngredient.swift in Sources */,
 				C01956882B4F81D200AD9D62 /* DessertDataModel.swift in Sources */,
 				C019566A2B4F81AC00AD9D62 /* DessertTabViewModel.swift in Sources */,
 				C019565C2B4F818300AD9D62 /* ContentView.swift in Sources */,
+				C047B44F2B57772200922002 /* CachedAsyncImage.swift in Sources */,
 				C01956872B4F81D200AD9D62 /* DessertInfoDataModel.swift in Sources */,
 				C01956892B4F81D200AD9D62 /* MealsContainerDataModel.swift in Sources */,
-				C01956762B4F81B600AD9D62 /* CachedAsyncImage.swift in Sources */,
+				C047B4532B57773200922002 /* ImageCache.swift in Sources */,
 				C01956702B4F81AC00AD9D62 /* DessertCardView.swift in Sources */,
 				C019566D2B4F81AC00AD9D62 /* Dessert.swift in Sources */,
 				C01956322B4F80FF00AD9D62 /* DessertCookbookApp.swift in Sources */,
@@ -417,7 +434,6 @@
 				C01956772B4F81B600AD9D62 /* CardView.swift in Sources */,
 				C019568A2B4F81D200AD9D62 /* NetworkService.swift in Sources */,
 				C01956782B4F81B600AD9D62 /* ExpandableCardView.swift in Sources */,
-				C01956852B4F81D200AD9D62 /* ImageCache.swift in Sources */,
 				C01956712B4F81AC00AD9D62 /* DessertTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

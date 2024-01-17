@@ -19,11 +19,7 @@ class DessertDetailViewModel: ObservableObject {
     }
     
     var image: Image {
-        if let imageURL = URL(string: dessert.imageURLString), let image = ImageCache.cache[imageURL] {
-            return image
-        } else {
-            return Image(systemName: defaultImageName)
-        }
+        ImageCache.shared.getImageView(for: dessert.imageURLString) ?? Image(systemName: defaultImageName)
     }
     
     var name: String {

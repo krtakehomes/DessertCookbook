@@ -17,30 +17,18 @@ struct DessertCardView: View {
     var body: some View {
         CardView {
             HStack(spacing: 16) {
-                CachedAsyncImage(url: URL(string: dessert.imageURLString)!) { phase in
-                    switch phase {
-                        case .empty:
-                            ProgressView()
-                                .progressViewStyle(.circular)
-                                .frame(width: imageSize)
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(height: imageSize)
-                        case .failure:
-                            Image(systemName: defaultImageName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: imageSize)
-                        @unknown default:
-                            Image(systemName: defaultImageName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: imageSize)
-                    }
+                CachedAsyncImage(url: URL(string: dessert.imageURLString)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } loadingContent: {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                } errorContent: {
+                    Image(systemName: defaultImageName)
                 }
-                .frame(height: imageSize)
+                .frame(width: imageSize, height: imageSize)
+                
                 Text(dessert.name)
                     .font(.callout)
                 Spacer()
