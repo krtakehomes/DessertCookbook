@@ -16,7 +16,7 @@ import Foundation
 ///   - instructions: The instructions detailing how to make the dessert
 ///   - ingredients: The ingredients needed to make the dessert
 ///   - imageURLString: The string for the dessert's image URL
-struct Dessert: Identifiable, Hashable {
+struct Dessert: Identifiable, Hashable, Codable {
     let id: String
     let name: String
     var origin: String = ""

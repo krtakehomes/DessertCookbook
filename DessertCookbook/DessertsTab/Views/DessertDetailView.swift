@@ -22,9 +22,15 @@ struct DessertDetailView: View {
                 
                 VStack(spacing: 16) {
                     VStack {
-                        Text(viewModel.name)
-                            .font(.title.bold())
-                            .multilineTextAlignment(.center)
+                        HStack {
+                            Text(viewModel.name)
+                                .font(.title.bold())
+                                .multilineTextAlignment(.center)
+                            
+                            Button(action: didTapBookmarkButton) {
+                                Image(systemName: viewModel.bookmarkImageName)
+                            }
+                        }
                         
                         if viewModel.showOrigin {
                             Text(viewModel.origin)
@@ -56,6 +62,11 @@ struct DessertDetailView: View {
         .background(Color.background)
         .toolbarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .tabBar)
+    }
+    
+    /// Handles the user's tap on the bookmark button
+    private func didTapBookmarkButton() {
+        viewModel.didTapBookmarkButton()
     }
 }
 

@@ -11,11 +11,13 @@ import SwiftUI
 class DessertDetailViewModel: ObservableObject {
     @Published private var dessert: Dessert
     @Published var isShowingIngredients = true
+    @Published private var isBookmarked: Bool
     let ingredientsLabel = "Ingredients"
     private let defaultImageName = "photo"
     
     init(dessert: Dessert) {
         self.dessert = dessert
+        self.isBookmarked = BookmarkManager.shared.isBookmarked(dessertID: dessert.id) // Set the initial bookmark state
     }
     
     var image: Image {
@@ -24,6 +26,10 @@ class DessertDetailViewModel: ObservableObject {
     
     var name: String {
         dessert.name
+    }
+    
+    var bookmarkImageName: String {
+        isBookmarked ? "bookmark.fill" : "bookmark"
     }
     
     var origin: String {
@@ -40,5 +46,12 @@ class DessertDetailViewModel: ObservableObject {
     
     var ingredients: [DessertIngredient] {
         dessert.ingredients
+    }
+    
+    /// Handles the user's tap on the bookmark button by toggling the bookmarked state of the current dessert
+    func didTapBookmarkButton() {
+        BookmarkManager.shared.toggleBookmark(for: dessert) { isBookmarked in
+            self.isBookmarked = isBookmarked
+        }
     }
 }

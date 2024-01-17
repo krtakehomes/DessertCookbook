@@ -10,8 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            DessertTabView()
-                .toolbarColorScheme(.light, for: .tabBar)
+            Group {
+                DessertTabView()
+                BookmarksTabView()
+            }
+            .toolbarColorScheme(.light, for: .tabBar)
         }
     }
 }

@@ -34,6 +34,9 @@
 		C047B4532B57773200922002 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B4512B57773200922002 /* ImageCache.swift */; };
 		C047B4542B57773200922002 /* CacheableImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B4522B57773200922002 /* CacheableImageModel.swift */; };
 		C047B4562B57779F00922002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B4552B57779F00922002 /* AppDelegate.swift */; };
+		C047B4582B5786C800922002 /* BookmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B4572B5786C800922002 /* BookmarkManager.swift */; };
+		C047B45C2B5786E000922002 /* BookmarksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B45A2B5786E000922002 /* BookmarksTabView.swift */; };
+		C047B45D2B5786E000922002 /* BookmarksTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047B45B2B5786E000922002 /* BookmarksTabViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		C047B4512B57773200922002 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		C047B4522B57773200922002 /* CacheableImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheableImageModel.swift; sourceTree = "<group>"; };
 		C047B4552B57779F00922002 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C047B4572B5786C800922002 /* BookmarkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkManager.swift; sourceTree = "<group>"; };
+		C047B45A2B5786E000922002 /* BookmarksTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksTabView.swift; sourceTree = "<group>"; };
+		C047B45B2B5786E000922002 /* BookmarksTabViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksTabViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 				C019565B2B4F818300AD9D62 /* ContentView.swift */,
 				C01956312B4F80FF00AD9D62 /* DessertCookbookApp.swift */,
 				C01956352B4F810000AD9D62 /* Assets.xcassets */,
+				C047B4592B5786E000922002 /* BookmarksTab */,
 				C019565D2B4F81AC00AD9D62 /* DessertsTab */,
 				C01956372B4F810000AD9D62 /* Preview Content */,
 				C01956722B4F81B600AD9D62 /* SharedComponents */,
@@ -204,8 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				C01956662B4F81AC00AD9D62 /* DessertDetailView.swift */,
-				C01956672B4F81AC00AD9D62 /* Components */,
 				C01956692B4F81AC00AD9D62 /* DessertTabView.swift */,
+				C01956672B4F81AC00AD9D62 /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +238,7 @@
 		C01956792B4F81D200AD9D62 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C047B4572B5786C800922002 /* BookmarkManager.swift */,
 				C047B4502B57773200922002 /* ImageCache */,
 				C019567B2B4F81D200AD9D62 /* NetworkService */,
 			);
@@ -240,9 +248,9 @@
 		C019567B2B4F81D200AD9D62 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				C019567C2B4F81D200AD9D62 /* APIs */,
-				C01956832B4F81D200AD9D62 /* NetworkService.swift */,
 				C01956842B4F81D200AD9D62 /* Endpoint.swift */,
+				C01956832B4F81D200AD9D62 /* NetworkService.swift */,
+				C019567C2B4F81D200AD9D62 /* APIs */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -277,10 +285,19 @@
 		C047B4502B57773200922002 /* ImageCache */ = {
 			isa = PBXGroup;
 			children = (
-				C047B4512B57773200922002 /* ImageCache.swift */,
 				C047B4522B57773200922002 /* CacheableImageModel.swift */,
+				C047B4512B57773200922002 /* ImageCache.swift */,
 			);
 			path = ImageCache;
+			sourceTree = "<group>";
+		};
+		C047B4592B5786E000922002 /* BookmarksTab */ = {
+			isa = PBXGroup;
+			children = (
+				C047B45A2B5786E000922002 /* BookmarksTabView.swift */,
+				C047B45B2B5786E000922002 /* BookmarksTabViewModel.swift */,
+			);
+			path = BookmarksTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,14 +436,17 @@
 				C019566B2B4F81AC00AD9D62 /* DessertDetailViewModel.swift in Sources */,
 				C019566F2B4F81AC00AD9D62 /* DessertDetailView.swift in Sources */,
 				C019566C2B4F81AC00AD9D62 /* DessertIngredient.swift in Sources */,
+				C047B45D2B5786E000922002 /* BookmarksTabViewModel.swift in Sources */,
 				C01956882B4F81D200AD9D62 /* DessertDataModel.swift in Sources */,
 				C019566A2B4F81AC00AD9D62 /* DessertTabViewModel.swift in Sources */,
 				C019565C2B4F818300AD9D62 /* ContentView.swift in Sources */,
 				C047B44F2B57772200922002 /* CachedAsyncImage.swift in Sources */,
 				C01956872B4F81D200AD9D62 /* DessertInfoDataModel.swift in Sources */,
 				C01956892B4F81D200AD9D62 /* MealsContainerDataModel.swift in Sources */,
+				C047B45C2B5786E000922002 /* BookmarksTabView.swift in Sources */,
 				C047B4532B57773200922002 /* ImageCache.swift in Sources */,
 				C01956702B4F81AC00AD9D62 /* DessertCardView.swift in Sources */,
+				C047B4582B5786C800922002 /* BookmarkManager.swift in Sources */,
 				C019566D2B4F81AC00AD9D62 /* Dessert.swift in Sources */,
 				C01956322B4F80FF00AD9D62 /* DessertCookbookApp.swift in Sources */,
 				C01956862B4F81D200AD9D62 /* NetworkService+TheMealDB.swift in Sources */,
